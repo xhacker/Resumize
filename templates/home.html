@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html data-ng-app="resumizeApp">
+<head>
+    <meta charset="utf-8" />
+    <title>Home</title>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.0-beta.8/angular.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.0-beta.8/angular-sanitize.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://rawgit.com/jdorn/json-editor/master/dist/jsoneditor.js"></script>
+    <script src="/static/app.js"></script>
+</head>
+<body data-ng-controller="resumizeController">
+    <h1>Your Resume is Here!</h1>
+
+    <div id='editor_holder'></div>
+    <button id='submit' data-ng-click="submit()">Submit (console.log)</button>
+</body>
+</html>
