@@ -8,7 +8,8 @@ from django.conf.urls.static import static
 
 urlpatterns = patterns('',
     url(r'^$', 'resumize.views.home'),
-    # url(r'^blog/', include('blog.urls')),
+    url(r'resume/^$', 'resumize.views.resume'),
+    url(r'^submit_resume/$', 'resumize.views.submit_resume'),
 
     url(r'^admin/', include(admin.site.urls)),
 )\

@@ -1,11 +1,12 @@
 var resumizeApp = angular.module('resumizeApp', ['ngSanitize']);
 
 resumizeApp.factory('resumizeFactory', ['$http', function ($http) {
-    var urlBase = '/';
+    var baseURL = '/';
     var resumizeFactory = {};
 
     resumizeFactory.submit = function (data) {
         console.log(data);
+        return $http.post(baseURL + 'submit_resume/', data);
     };
 
     return resumizeFactory;
@@ -46,7 +47,9 @@ resumizeApp.controller('resumizeController', function ($scope, $sce, resumizeFac
     }
 
     $scope.submit = function () {
-        resumizeFactory.submit(editor.getValue());
+        resumizeFactory.submit(editor.getValue()).success(function (info) {
+            // window.location.href = "/resume.html";
+        });
     };
 
 });
