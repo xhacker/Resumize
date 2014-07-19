@@ -62,7 +62,7 @@ h1 > p {
     margin-right: 12px;
 }
 .section-add a:hover {
-    color: #888;
+    color: #777;
 }
 
 .section-item {
@@ -75,7 +75,7 @@ h1 > p {
 }
 
 .section-item h3 a {
-    color: #aaa;
+    color: #bbb;
 }
 .section-item h3 a:hover {
     color: #999;
@@ -90,7 +90,7 @@ h1 > p {
     color: #bbb;
 }
 .section-item ul li.add a:hover {
-    color: #aaa;
+    color: #999;
 }
 
 .submit {
