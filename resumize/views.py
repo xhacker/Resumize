@@ -1,7 +1,9 @@
 from annoying.decorators import render_to
 from django.views.decorators.csrf import csrf_exempt
 import json
-
+from django.shortcuts import HttpResponse, render_to_response
+from django.core import serializers
+from resumize.models import *
 
 @render_to('home.html')
 def home(request):
@@ -12,8 +14,13 @@ def resume(request):
     return locals()
 
 @csrf_exempt
-@render_to('resume.html')
 def submit_resume(request):
-    data = json.loads(request.body)
-    print data
-    return locals()
+    r = Resume(data=request.body)
+    r.save()
+    ret = { id: r.pk }
+    return HttpResponse(serializers.serialize('json', ret), content_type="application/json")
+
+def view_resume(request, id):
+    r = Resume.objects.filter(pk=id)
+    print json.load(r.data)
+    return render_to_response('resume.html', json.load(r.data))

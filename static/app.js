@@ -48,7 +48,7 @@ resumizeApp.controller('resumizeController', function ($scope, $sce, resumizeFac
 
     $scope.submit = function () {
         resumizeFactory.submit(editor.getValue()).success(function (info) {
-            // window.location.href = "/resume.html";
+            window.location.href = "/" + info.id + "/";
         });
     };
 

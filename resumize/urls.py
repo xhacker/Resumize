@@ -10,6 +10,7 @@ urlpatterns = patterns('',
     url(r'^$', 'resumize.views.home'),
     url(r'resume/^$', 'resumize.views.resume'),
     url(r'^submit_resume/$', 'resumize.views.submit_resume'),
+    url(r'(\d+)/$', 'resumize.views.view_resume'),
 
     url(r'^admin/', include(admin.site.urls)),
 )\
